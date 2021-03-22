@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .btn {
+            margin: 100px 100px;
+        }
+        
+        .div {
+            transition: all 3s;
+            margin: 10% 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">点我变色</button>
+    <div class="div">我的一个div盒子</div>
+</body>
+
+<script>
+    var divObj = document.querySelector(".div");
+    divObj.style.fontSize = "10px";
+    divObj.style.color = "cadetblue";
+
+
+    var btnObj = document.querySelector(".btn");
+    btnObj.onclick = function() {
+        divObj.style.fontSize = "100px";
+        divObj.style.color = "mediumvioletred";
+    }
+</script>
+
+</html>
