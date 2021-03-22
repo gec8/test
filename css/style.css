@@ -44,7 +44,6 @@ nav>ul>li:hover {
     background-color: #7FFFD4;
 }
 
-
 @media screen and (max-width:1400px) {
     .nav {
         width: 1200px;
@@ -177,4 +176,16 @@ nav>ul>li:hover {
     font-size: 20px;
     color: red;
     margin: 50px auto;
+}
+
+.play {
+    display: block;
+    width: 80px;
+    height: 30px;
+    margin: 50px auto;
+    line-height: 30px;
+    text-align: center;
+    background-color: #f512b1;
+    border-radius: 10px;
+    color: white;
 }
