@@ -4,152 +4,2513 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>网页</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>设计本</title>
+    <style>
+        body {
+            position: relative;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?7kkyc2');
+            src: url('fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?7kkyc2') format('truetype'), url('fonts/icomoon.woff?7kkyc2') format('woff'), url('fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        .header {
+            width: 100%;
+            height: 500px;
+            z-index: 10;
+        }
+        
+        .header * {
+            z-index: 100;
+        }
+        
+        .nav {
+            position: relative;
+            width: 88%;
+            height: 60px;
+            margin: 0 auto;
+        }
+        
+        .nav-left {
+            float: left;
+            width: 685px;
+            height: 60px;
+        }
+        
+        .nav .logo {
+            position: absolute;
+            display: inline-block;
+            width: 80px;
+            line-height: 37px;
+            font-size: 25px;
+            font-weight: 100px;
+            color: white;
+            margin: 10px 0 0 30px;
+        }
+        
+        .nav .nav-left>ul li .index {
+            position: absolute;
+            display: inline-block;
+            width: 20px;
+            height: 2px;
+            background-color: #fff;
+            top: 50px;
+            left: 50%;
+            margin-left: -11px;
+            border-radius: 1px;
+        }
+        
+        .nav .nav-left>ul {
+            display: inline-block;
+            width: 565px;
+            line-height: 60px;
+            margin-left: 120px;
+        }
+        
+        .nav .nav-left>ul li {
+            position: relative;
+            float: left;
+            width: 80px;
+            line-height: 60px;
+            text-align: center;
+        }
+        
+        .nav .nav-left>ul li:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav .nav-left>ul li:hover .select {
+            display: block;
+        }
+        
+        .nav .nav-left>ul li a {
+            color: white;
+            font-size: 16px;
+        }
+        
+        .nav .nav-right {
+            position: relative;
+            float: right;
+            width: 550px;
+            height: 60px;
+            margin-right: 30px;
+            box-sizing: border-box;
+        }
+        
+        .nav .search {
+            position: relative;
+            display: inline-block;
+            width: 300px;
+            height: 35px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 30px;
+            margin: 10px 10px;
+        }
+        
+        .nav .search:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .nav .search>input {
+            height: 32px;
+            line-height: 32px;
+            outline: none;
+            margin-top: 1px;
+            font-size: 14px;
+            color: #FFFFFF;
+            opacity: 0.5;
+            border-style: none;
+            background-color: transparent;
+        }
+        
+        .nav .search-div {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 100%;
+            margin-left: 20px;
+            color: white;
+        }
+        
+        .nav .search-div span {
+            font-family: "icomoon";
+            font-size: 16px;
+            display: inline-block;
+        }
+        
+        .nav .search-div:hover .ico {
+            transform: rotateX(180deg);
+        }
+        
+        .nav .search-div:hover .search-div-select {
+            display: block;
+        }
+        
+        .nav .search-div-select {
+            display: none;
+            position: absolute;
+            width: 60px;
+            height: 300px;
+            top: 35px;
+        }
+        
+        .nav .search-div-select>ul {
+            width: 80px;
+            height: 300px;
+        }
+        
+        .nav .search-div-select>ul>li {
+            width: 80px;
+            line-height: 60px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .nav .search-div-select>ul>li:hover {
+            background-color: rgba(5, 5, 5, 0.6);
+        }
+        
+        .nav .search-div-select>ul>li a {
+            color: white;
+        }
+        
+        .nav .search-search {
+            position: relative;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            top: 2px;
+            right: 3px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+        }
+        
+        .nav .search-search .ico {
+            position: absolute;
+            font-family: "icomoon";
+            font-size: 20px;
+            color: white;
+            top: 5px;
+            left: 5px;
+        }
+        
+        .nav .search-search:hover {
+            background-color: red;
+        }
+        
+        .nav .nav-right>a {
+            position: absolute;
+            display: inline-block;
+            width: 85px;
+            line-height: 35px;
+            border-radius: 25px;
+            margin-left: 10px;
+            text-align: center;
+            color: white;
+            top: 10px;
+        }
+        
+        .nav .record {
+            background-color: red;
+        }
+        
+        .nav .post {
+            border: 1px solid white;
+            right: 30px;
+        }
+        
+        .nav .post:hover {
+            background-color: red;
+            border: none;
+        }
+        
+        .nav .select {
+            display: none;
+            width: 70px;
+            height: auto;
+            left: -5px;
+        }
+        
+        .nav .select>ul li {
+            width: 77px;
+            height: 60px;
+            text-align: center;
+        }
+        
+        .nav .select>ul li:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .fixnav {
+            position: fixed;
+            top: 0px;
+            left: 6%;
+            z-index: 10;
+        }
+        
+        .header .nav2 {
+            width: 88%;
+            height: 70px;
+            background-color: rgb(255, 255, 255);
+            margin: 0 auto;
+        }
+        
+        .nav2 .logo {
+            position: absolute;
+            display: inline-block;
+            width: 80px;
+            line-height: 37px;
+            font-size: 25px;
+            font-weight: 100px;
+            color: rgb(255, 4, 4);
+            margin: 10px 0 0 30px;
+        }
+        
+        .nav2-left>ul {
+            width: 565px;
+            line-height: 60px;
+            margin-left: 120px;
+        }
+        
+        .nav2-left>ul li .index2 {
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background-color: rgb(255, 0, 0);
+            top: 50px;
+            left: 50%;
+            margin-left: -11px;
+            border-radius: 1px;
+        }
+        
+        .nav2-left>ul li {
+            position: relative;
+            float: left;
+            width: 80px;
+            line-height: 60px;
+            text-align: center;
+        }
+        
+        .nav2-left>ul li:hover {
+            background-color: rgb(237, 39, 39);
+        }
+        
+        .nav2-left>ul li:hover a {
+            color: white;
+        }
+        
+        .nav2-left>ul li:hover .index2 {
+            background-color: white;
+        }
+        
+        .nav2-left>ul li:hover .select2 {
+            display: block;
+        }
+        
+        .nav2-left>ul li a {
+            color: rgb(0, 0, 0);
+            font-size: 16px;
+        }
+        
+        .nav2-right {
+            position: relative;
+            float: right;
+            width: 550px;
+            height: 60px;
+            margin-right: 30px;
+            box-sizing: border-box;
+        }
+        
+        .search2 {
+            position: relative;
+            display: inline-block;
+            width: 300px;
+            height: 35px;
+            background-color: rgba(229, 229, 229, 0.3);
+            border-radius: 30px;
+            margin: 10px 10px;
+        }
+        
+        .search2>input {
+            height: 32px;
+            line-height: 32px;
+            outline: none;
+            margin-top: 1px;
+            font-size: 14px;
+            color: #FFFFFF;
+            opacity: 0.5;
+            border-style: none;
+            background-color: transparent;
+        }
+        
+        .search2-div {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 100%;
+            margin-left: 20px;
+            color: #666666;
+        }
+        
+        .search2-div span {
+            font-family: "icomoon";
+            font-size: 16px;
+            display: inline-block;
+        }
+        
+        .search2-div:hover .ico {
+            transform: rotateX(180deg);
+        }
+        
+        .search2-div:hover .search2-div-select {
+            display: block;
+        }
+        
+        .search2-div-select {
+            display: none;
+            position: absolute;
+            width: 60px;
+            height: 300px;
+            top: 35px;
+        }
+        
+        .search2-div-select>ul {
+            width: 80px;
+            height: 300px;
+        }
+        
+        .search2-div-select>ul>li {
+            width: 80px;
+            line-height: 60px;
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+        }
+        
+        .search2-div-select>ul>li:hover {
+            background-color: rgb(254, 50, 50);
+        }
+        
+        .search2-div-select>ul>li:hover a {
+            color: white;
+        }
+        
+        .search2-div-select>ul>li a {
+            color: #666666;
+        }
+        
+        .search2-search {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            top: 2px;
+            right: 3px;
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+        }
+        
+        .search2-search .ico {
+            position: absolute;
+            font-family: "icomoon";
+            font-size: 20px;
+            color: rgb(7, 7, 7);
+            top: 5px;
+            left: 5px;
+        }
+        
+        .search2-search:hover .ico {
+            color: white;
+        }
+        
+        .search2-search:hover {
+            background-color: red;
+        }
+        
+        .nav2-right>a {
+            position: absolute;
+            display: inline-block;
+            width: 85px;
+            line-height: 35px;
+            border-radius: 25px;
+            margin-left: 10px;
+            text-align: center;
+            top: 10px;
+        }
+        
+        .record2 {
+            background-color: red;
+            color: white;
+        }
+        
+        .post2 {
+            border: 1px solid #444444;
+            right: 30px;
+            color: #444444;
+        }
+        
+        .post2:hover {
+            background-color: red;
+            border: none;
+            color: white;
+        }
+        
+        .select2 {
+            display: none;
+            width: 70px;
+            height: 100px;
+            left: -5px;
+        }
+        
+        .select2>ul li {
+            width: 77px;
+            height: 60px;
+            text-align: center;
+            background-color: rgba(254, 50, 50, 0.5);
+        }
+        
+        .select2>ul li:hover {
+            background-color: rgb(239, 37, 37);
+        }
+        
+        .wrap {
+            width: 100%;
+            height: 500px;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+        }
+        
+        .pic {
+            width: 100%;
+            height: 500px;
+            position: absolute;
+        }
+        
+        .pic img {
+            width: 100%;
+            height: 500px;
+        }
+        
+        .main {
+            position: relative;
+            width: 85%;
+            height: auto;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        
+        .designer {
+            width: 100%;
+            height: 850px;
+        }
+        
+        .designer-nav {
+            width: 1257px;
+            height: 40px;
+        }
+        
+        .designer-nav .name {
+            line-height: 40px;
+            font-size: 28px;
+        }
+        
+        .designer-nav .name::before {
+            height: 29px;
+            width: 4px;
+            background: #FE3233;
+            display: inline-block;
+            margin-right: 20px;
+            content: '';
+            margin-top: -6px;
+            vertical-align: middle;
+        }
+        
+        .designer-nav>ul {
+            width: 520px;
+            height: 40px;
+            margin: -36px 0 0 150px;
+        }
+        
+        .designer-nav>ul li {
+            float: left;
+            width: 130px;
+            line-height: 40px;
+            text-align: center;
+        }
+        
+        .designer-nav>ul li a:hover {
+            color: red;
+        }
+        
+        .designer-nav .change {
+            position: absolute;
+            width: 85px;
+            line-height: 35px;
+            border: 1px solid rgb(236, 234, 234);
+            border-radius: 25px;
+            text-align: center;
+            right: 18px;
+            top: 10px;
+        }
+        
+        .designer-nav .change:hover {
+            cursor: pointer;
+            background-color: red;
+            color: white;
+        }
+        
+        .designer-content {
+            width: 100%;
+            height: 551px;
+            margin-top: 100px;
+        }
+        
+        .designer-content>ul {
+            width: 100%;
+            height: 551px;
+        }
+        
+        .designer-content>ul li {
+            float: left;
+            width: 25%;
+            height: 551px;
+            overflow: hidden;
+        }
+        
+        .designer-content .img {
+            width: 410px;
+            height: 411px;
+        }
+        
+        .designer-content .img img:hover {
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
+        }
+        
+        .designer-content .word {
+            width: 410px;
+            height: 140px;
+        }
+        
+        .designer-content .word span {
+            margin-bottom: 22px;
+            font-size: 24px;
+            color: #000000;
+            display: block;
+            padding: 28px 30px;
+        }
+        
+        .designer-content .word em {
+            font-size: 12px;
+            color: #666666;
+            padding: 28px 30px;
+        }
+        
+        .recommend {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        
+        .recommend-nav {
+            width: 1257px;
+            height: 40px;
+        }
+        
+        .recommend-nav .name {
+            line-height: 40px;
+            font-size: 28px;
+        }
+        
+        .recommend-nav .name::before {
+            height: 29px;
+            width: 4px;
+            background: #FE3233;
+            display: inline-block;
+            margin-right: 20px;
+            content: '';
+            margin-top: -6px;
+            vertical-align: middle;
+        }
+        
+        .recommend-nav>ul {
+            width: 520px;
+            height: 40px;
+            margin: -36px 0 0 150px;
+        }
+        
+        .recommend-nav>ul li {
+            float: left;
+            width: 130px;
+            line-height: 40px;
+            text-align: center;
+        }
+        
+        .recommend-nav>ul li a:hover {
+            color: red;
+        }
+        
+        .recommend-nav .change {
+            position: absolute;
+            right: 18px;
+            top: 10px;
+        }
+        
+        .recommend-nav .change:hover {
+            cursor: pointer;
+            color: red;
+        }
+        
+        .recommend-content {
+            width: 100%;
+            height: auto;
+            margin-top: 100px;
+        }
+        
+        .recommend-content {
+            position: relative;
+            width: 102%;
+            height: 340px;
+        }
+        
+        .recommend-big {
+            width: 100%;
+            height: 340px;
+        }
+        
+        .recommend-big li {
+            position: relative;
+            float: left;
+            width: 48%;
+            height: 340px;
+            margin-right: 25px;
+            transition: all 0.5s;
+        }
+        
+        .recommend-big .recommend-bottom {
+            position: absolute;
+            bottom: 25px;
+            left: 20px;
+        }
+        
+        .recommend-big .recommend-bottom .ico {
+            font-family: "icomoon";
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .recommend-big .recommend-bottom .num {
+            margin-right: 12px;
+            font-size: 12px;
+            color: #fff;
+        }
+        
+        .recommend-big .recommend-collect {
+            right: 20px;
+            top: 20px;
+            display: none;
+            position: absolute;
+            padding: 0px 11px;
+            height: 25px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 12.5px;
+        }
+        
+        .recommend-big .recommend-collect .ico {
+            font-family: "icomoon";
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .recommend-big .recommend-collect .word {
+            font-size: 12px;
+            color: #FFFFFF;
+            text-align: right;
+            line-height: 25px;
+            margin-left: -1px;
+            display: inline-block;
+        }
+        
+        .recommend-big li:hover .recommend-collect {
+            display: block;
+        }
+        
+        .recommend-big li:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .recommend-big img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0px;
+            box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.02)
+        }
+        
+        .recommend-info {
+            position: absolute;
+            height: 100%;
+            width: 267px;
+        }
+        
+        .line-hie {
+            overflow: hidden;
+            height: 80%;
+        }
+        
+        .recommend-info .content {
+            padding: 40px 40px 24px;
+        }
+        
+        .recommend-info .content .title {
+            height: 118px;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .recommend-info .content .name {
+            display: block;
+            margin-top: 8px;
+            font-size: 12px;
+            color: #FFFFFF;
+        }
+        
+        .recommend-small {
+            width: 102%;
+            flex-wrap: wrap;
+            margin: 40px 0px 60px;
+        }
+        
+        .recommend-small .recommend-bottom {
+            margin-top: 15px;
+        }
+        
+        .recommend-small .recommend-bottom .ico {
+            font-family: "icomoon";
+            color: #BBBBBB;
+            font-size: 16px;
+        }
+        
+        .recommend-small .recommend-bottom .num {
+            margin-right: 15px;
+            color: #666666;
+            font-size: 12px;
+        }
+        
+        .recommend-small .recommend-collect {
+            display: inline-block;
+            right: 20px;
+            top: 20px;
+            display: none;
+            position: absolute;
+            padding: 0px 11px;
+            height: 25px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 12.5px;
+        }
+        
+        .recommend-small .recommend-collect .ico {
+            font-family: "icomoon";
+            color: #fff;
+            font-size: 16px;
+        }
+        
+        .recommend-small .recommend-collect .word {
+            font-size: 12px;
+            color: #FFFFFF;
+            text-align: right;
+            line-height: 25px;
+            margin-left: -1px;
+        }
+        
+        .recommend-small li {
+            float: left;
+            width: 31%;
+            height: 50%;
+            position: relative;
+            margin: 0px 20px 40px 0px;
+            transition: all 0.5s;
+        }
+        
+        .recommend-small li:hover .recommend-collect {
+            display: block;
+        }
+        
+        .recommend-small li:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .recommend-small li img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .recommend-small .word {
+            width: 396px;
+            height: 80px;
+            padding-top: 24px;
+        }
+        
+        .recommend-small .word .recommend-name {
+            font-size: 16px;
+        }
+        
+        .recommend-small .recommend-bottom {
+            margin-top: 15px;
+        }
+        
+        .recommend-small .recommend-bottom .designer-name {
+            margin-right: 15px;
+            font-size: 12px;
+        }
+        
+        .course {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        
+        .course-nav {
+            width: 1257px;
+            height: 40px;
+        }
+        
+        .course-nav .name {
+            line-height: 40px;
+            font-size: 28px;
+        }
+        
+        .course-nav .name::before {
+            height: 29px;
+            width: 4px;
+            background: #FE3233;
+            display: inline-block;
+            margin-right: 20px;
+            content: '';
+            margin-top: -6px;
+            vertical-align: middle;
+        }
+        
+        .course-nav>ul {
+            width: 520px;
+            height: 40px;
+            margin: -36px 0 0 150px;
+        }
+        
+        .course-nav>ul li {
+            float: left;
+            width: 130px;
+            line-height: 40px;
+            text-align: center;
+        }
+        
+        .course-nav>ul li a:hover {
+            color: red;
+        }
+        
+        .course-nav .change {
+            position: absolute;
+            right: 18px;
+            top: 10px;
+        }
+        
+        .course-nav .change:hover {
+            cursor: pointer;
+            color: red;
+        }
+        
+        .course-content>ul {
+            width: 102%;
+            flex-wrap: wrap;
+            margin: 40px 0px 60px;
+        }
+        
+        .course-content>ul li {
+            float: left;
+            width: 31%;
+            height: 50%;
+            position: relative;
+            margin: 0px 20px 40px 0px;
+            transition: all 0.5s;
+        }
+        
+        .course-content>ul li:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-content>ul li img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .course-content>ul .word {
+            width: 396px;
+            height: 80px;
+            padding-top: 24px;
+        }
+        
+        .course-content>ul .word .course-name {
+            font-size: 16px;
+        }
+        
+        .course-content>ul .course-bottom {
+            margin-top: 15px;
+        }
+        
+        .course-content>ul .course-bottom .name {
+            margin-right: 15px;
+            font-size: 12px;
+        }
+        
+        .trends {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        
+        .trends-nav {
+            width: 1257px;
+            height: 40px;
+        }
+        
+        .trends-nav .name {
+            line-height: 40px;
+            font-size: 28px;
+        }
+        
+        .trends-nav .name::before {
+            height: 29px;
+            width: 4px;
+            background: #FE3233;
+            display: inline-block;
+            margin-right: 20px;
+            content: '';
+            margin-top: -6px;
+            vertical-align: middle;
+        }
+        
+        .trends-nav>ul {
+            width: 520px;
+            height: 40px;
+            margin: -36px 0 0 150px;
+        }
+        
+        .trends-nav>ul li {
+            float: left;
+            width: 130px;
+            line-height: 40px;
+            text-align: center;
+        }
+        
+        .trends-nav>ul li a:hover {
+            color: red;
+        }
+        
+        .trends-nav .change {
+            position: absolute;
+            right: 18px;
+            top: 10px;
+        }
+        
+        .trends-nav .change:hover {
+            cursor: pointer;
+            color: red;
+        }
+        
+        .trends-content {
+            width: 102%;
+            position: relative;
+        }
+        
+        .trends-content .top {
+            width: 102%;
+            flex-wrap: wrap;
+            margin: 40px 0px 60px;
+        }
+        
+        .trends-content .top li {
+            float: left;
+            width: 31%;
+            height: 50%;
+            position: relative;
+            margin: 0px 20px 40px 0px;
+            transition: all 0.5s;
+        }
+        
+        .trends-content .top li:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .trends-content .top li img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .trends-content .top .word span {
+            font-size: 20px;
+            margin-top: 12px;
+            line-height: 45px;
+        }
+        
+        .trends-content .bottom {
+            margin-top: 28px;
+        }
+        
+        .trends-content .bottom li {
+            float: left;
+            width: 31%;
+            margin-right: 2.3%;
+        }
+        
+        .trends-content .bottom li:hover {
+            transform: translateY(-8px);
+            transition: all 0.5s;
+        }
+        
+        .trends-content .bottom .img {
+            float: left;
+        }
+        
+        .trends-content .bottom .img:hover {
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
+        }
+        
+        .trends-content .bottom .img img {
+            width: 118px;
+            height: 118px;
+            object-fit: cover;
+        }
+        
+        .trends-content .bottom .word {
+            margin-left: 14px;
+            width: 255px;
+            height: 118px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .trends-content .bottom .word em {
+            font-size: 12px;
+            color: #666666;
+            display: inline-block;
+        }
+        
+        .trends-content .bottom .word span {
+            font-size: 16px;
+            margin-top: 11px;
+            color: #121212;
+            overflow: hidden;
+        }
+        
+        .trends-content .bottom .word p {
+            font-size: 12px;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            color: #666666;
+        }
+        
+        .brand {
+            position: relative;
+            width: 100%;
+            height: auto;
+            margin-top: 60px;
+        }
+        
+        .brand .word {
+            width: 100%;
+            height: 40px;
+        }
+        
+        .brand .word span {
+            line-height: 40px;
+            font-size: 28px;
+        }
+        
+        .brand .word span::before {
+            height: 29px;
+            width: 4px;
+            background: #FE3233;
+            display: inline-block;
+            margin-right: 20px;
+            content: '';
+            margin-top: -6px;
+            vertical-align: middle;
+        }
+        
+        .brand .img {
+            background: #FFFFFF;
+            width: 102%;
+            margin-top: 60px;
+        }
+        
+        .brand .img .push {
+            width: 106%;
+            margin-left: -54px;
+        }
+        
+        .brand .img ul li {
+            width: 12%;
+            height: 100px;
+            margin: 0 0 40px 54px;
+            float: left;
+            border: 1px solid #EEEEEE;
+            box-sizing: border-box;
+        }
+        
+        .brand .img ul li img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .end {
+            width: 100%;
+            height: 230px;
+            background: #0E0E0E;
+            padding: 100px 0;
+            padding: 44px 0 60px;
+        }
+        
+        .end span {
+            color: #FF3333;
+            font-size: 30px;
+            margin-bottom: 40px;
+            display: block;
+            text-align: center;
+        }
+        
+        .end .content {
+            margin: 0 auto;
+        }
+        
+        .end .content .link {
+            margin: 0 auto;
+            width: 712px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .end .content .link a {
+            margin-right: 40px;
+            opacity: 0.5;
+            font-size: 16px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        
+        .end .content .line {
+            width: 560px;
+            margin: 20px auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .end .content .relief {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .end .content .bottom {
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .end .content .bottom a {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .right-box {
+            position: absolute;
+            position: fixed;
+            top: 200px;
+            width: 62px;
+            height: 200px;
+            text-align: center;
+            right: 0;
+        }
+        
+        .right-box .box {
+            width: 62px;
+            height: 200px;
+        }
+        
+        .right-box .box a {
+            float: left;
+            width: 60px;
+            height: 60px;
+            border: solid 1px #eee;
+            font-size: 12px;
+            color: #666;
+            background-color: #fff;
+        }
+        
+        .right-box .box a:hover {
+            background: #dd4f50;
+            border: solid 1px #dd4f50;
+            color: #fff;
+            border-top: none;
+        }
+        
+        .right-box .box a:hover em {
+            color: #fff;
+        }
+        
+        .right-box .box a:hover label {
+            color: white;
+        }
+        
+        .right-box .box .box-a1 em {
+            background: url(images/design.gif) no-repeat;
+        }
+        
+        .right-box .box .box-a2 em {
+            font-family: "icomoon";
+            font-size: 25px;
+            color: red;
+        }
+        
+        .right-box .box .box-a3 em {
+            background: url(images/code.gif);
+        }
+        
+        .right-box .box .box-a4 em {
+            font-family: "icomoon";
+            font-size: 25px;
+            color: red;
+        }
+        
+        .right-box .box em {
+            display: block;
+            width: 22px;
+            height: 22px;
+            margin: 10px auto 5px;
+        }
+        
+        .right-box .box .box-a2 .right-box .box label {
+            font-size: 12px;
+        }
+        
+        .underpart {
+            position: absolute;
+            height: 85px;
+            position: fixed;
+            bottom: -458px;
+            bottom: 0;
+            left: 0;
+            z-index: 1001;
+            width: 100%;
+            transition: all .7s;
+            background: url(images/big.png) no-repeat;
+            background-size: 100% 636px;
+        }
+        
+        .underpart .bigimg {
+            width: 100%;
+            height: 558px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: 100% 538px;
+        }
+        
+        .underpart .content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            z-index: 10;
+        }
+        
+        .underpart .top {
+            width: 100%;
+            margin: 0 auto;
+            height: 85px;
+            position: relative;
+        }
+        
+        .underpart .top .content {
+            width: 993px;
+            margin: 0 auto;
+        }
+        
+        .underpart .top span {
+            font-size: 35px;
+            color: rgb(215, 217, 218);
+        }
+        
+        .underpart .top .word-left {
+            width: 275px;
+            position: absolute;
+            bottom: 0;
+            top: 20px;
+            left: 50px;
+        }
+        
+        .underpart .top .gif {
+            width: 129px;
+            height: 136px;
+            display: block;
+            position: absolute;
+            left: 420px;
+            top: -22px;
+            z-index: 11;
+            background: url(images/animate.gif) no-repeat;
+        }
+        
+        .underpart .top .word-right {
+            width: 275px;
+            position: absolute;
+            bottom: 0;
+            top: 20px;
+            right: 50px;
+        }
+        
+        .underpart .remove {
+            width: 38px;
+            height: 38px;
+            display: block;
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            cursor: pointer;
+            background: url(images/ico-close.png) no-repeat;
+            display: none;
+        }
+        
+        .underpart .main {
+            width: 1000px;
+            height: 460px;
+            border-radius: 10px;
+            display: none;
+        }
+        
+        .underpart .main>div {
+            float: left;
+            width: 500px;
+            height: 460px;
+        }
+        
+        .underpart .main .left {
+            height: 460px;
+            margin-top: 8px;
+            background: #FFF;
+            overflow: hidden;
+        }
+        
+        .underpart .main .left .img {
+            height: 460px;
+            background: url(images/sprite.png) no-repeat;
+            background-position: 40px -100px;
+        }
+        
+        .underpart .main .right {
+            height: 460px;
+            position: relative;
+            margin-top: 8px;
+            background: #fafafa;
+        }
+        
+        .underpart .main .right form {
+            margin: 40px 0 0 100px;
+            width: 310px;
+            float: left;
+        }
+        
+        .underpart .main .right form .title {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+            font-family: '微软雅黑';
+            text-align: center;
+        }
+        
+        .underpart .main .right form .content {
+            margin-bottom: 25px;
+            text-align: center;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .underpart .main .right form .content span {
+            color: red;
+        }
+        
+        .underpart .main .right form .box {
+            width: 309px;
+            min-height: 40px;
+            margin-top: 10px;
+        }
+        
+        .underpart .main .right form .box input {
+            width: 286px;
+            height: 22px;
+            padding: 8px 10px;
+            line-height: 24px;
+            border: 1px #e3e3e3 solid;
+            background: #fff;
+            font-size: 14px;
+        }
+        
+        .underpart .main .right form .box select {
+            width: 100%;
+            padding: 8px 10px;
+            border: 1px #e3e3e3 solid;
+            color: rgb(117, 117, 117);
+            font-size: 14px;
+        }
+        
+        .underpart .main .right form>input {
+            width: 309px;
+            height: 40px;
+            display: block;
+            margin: 10px 0 0;
+            padding: 0;
+            float: left;
+            background: #dd4f50;
+            border: none;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .underpart .main .right form .text {
+            padding-top: 15px;
+            clear: both;
+            color: #333;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="nav">
-        <nav>
-            <ul>
-                <li><a href="index1.html">首页</a></li>
-                <li><a href="#">日志</a></li>
-                <li><a href="#">相册</a></li>
-                <li><a href="#">说说</a></li>
-                <li><a href="#">空间</a></li>
-                <li><a href="#">更多</a></li>
-            </ul>
-        </nav>
+    <div class="header">
+        <div class="nav">
+            <div class="nav-left">
+                <!-- <div class="logo"> -->
+                <span class="logo"><b>设计本</b></span>
+                <!-- </div> -->
+                <ul>
+                    <li>
+                        <a href="#">首页</a>
+                        <em class="index"></em>
+                    </li>
+                    <li>
+                        <a href="#">案例</a>
+                        <div class="select">
+                            <ul>
+                                <li>
+                                    <a href="#">装修图库</a>
+                                </li>
+                                <li>
+                                    <a href="#">案例解析</a>
+                                </li>
+                                <li>
+                                    <a href="#">名家汇</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">找设计</a>
+                        <div class="select">
+                            <ul>
+                                <li>
+                                    <a href="#">设计师</a>
+                                </li>
+                                <li>
+                                    <a href="#">设计机构</a>
+                                </li>
+                                <li>
+                                    <a href="#">行业大咖</a>
+                                </li>
+                                <li>
+                                    <a href="#">设计专访</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">资讯</a></li>
+                    <li><a href="#">课程</a></li>
+                    <li><a href="#">活动</a></li>
+                    <li>
+                        <a href="#">更多</a>
+                        <div class="select">
+                            <ul>
+                                <li>
+                                    <a href="#">有问必答</a>
+                                </li>
+                                <li>
+                                    <a href="#">模型下载</a>
+                                </li>
+                                <li>
+                                    <a href="#">空间谈</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="search">
+                    <div class="search-div">
+                        图片
+                        <span class="ico"></span>
+                        <div class="search-div-select">
+                            <ul>
+                                <li>
+                                    <a href="#">图集</a>
+                                </li>
+                                <li>
+                                    <a href="#">案例</a>
+                                </li>
+                                <li>
+                                    <a href="#">设计师</a>
+                                </li>
+                                <li>
+                                    <a href="#">问答</a>
+                                </li>
+                                <li>
+                                    <a href="#">模型</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span></span>
+                    <input type="text" placeholder="请输入搜索关键词">
+                    <div class="search-search">
+                        <span class="ico"></span>
+                    </div>
+                </div>
+                <a class="record" href="#">登录</a>
+                <a class="post" href="#">注册</a>
+            </div>
+
+        </div>
+        <div class="nav2">
+            <div class="nav2-left">
+                <!-- <div class="logo"> -->
+                <span class="logo"><b>设计本</b></span>
+                <!-- </div> -->
+                <ul>
+                    <li>
+                        <a href="#">首页</a>
+                        <em class="index2"></em>
+                    </li>
+                    <li>
+                        <a href="#">案例</a>
+                        <div class="select2">
+                            <ul>
+                                <li>
+                                    <a href="#">装修图库</a>
+                                </li>
+                                <li>
+                                    <a href="#">案例解析</a>
+                                </li>
+                                <li>
+                                    <a href="#">名家汇</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">找设计</a>
+                        <div class="select2">
+                            <ul>
+                                <li>
+                                    <a href="#">设计师</a>
+                                </li>
+                                <li>
+                                    <a href="#">设计机构</a>
+                                </li>
+                                <li>
+                                    <a href="#">行业大咖</a>
+                                </li>
+                                <li>
+                                    <a href="#">设计专访</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">资讯</a></li>
+                    <li><a href="#">课程</a></li>
+                    <li><a href="#">活动</a></li>
+                    <li>
+                        <a href="#">更多</a>
+                        <div class="select2">
+                            <ul>
+                                <li>
+                                    <a href="#">有问必答</a>
+                                </li>
+                                <li>
+                                    <a href="#">模型下载</a>
+                                </li>
+                                <li>
+                                    <a href="#">空间谈</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav2-right">
+                <div class="search2">
+                    <div class="search2-div">
+                        图片
+                        <span class="ico"></span>
+                        <div class="search2-div-select">
+                            <ul>
+                                <li>
+                                    <a href="#">图集</a>
+                                </li>
+                                <li>
+                                    <a href="#">案例</a>
+                                </li>
+                                <li>
+                                    <a href="#">设计师</a>
+                                </li>
+                                <li>
+                                    <a href="#">问答</a>
+                                </li>
+                                <li>
+                                    <a href="#">模型</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <span></span>
+
+                    <input type="text" placeholder="请输入搜索关键词">
+                    <div class="search2-search">
+                        <span class="ico"></span>
+                    </div>
+                </div>
+                <a class="record2" href="#">登录</a>
+                <a class="post2" href="#">注册</a>
+            </div>
+        </div>
+
     </div>
-    <div class="content-top">
-        <ul>
-            <li>
-                <a href="#">
-                    <div class="img">
-                        <img src="img/webp1.png">
-                    </div>
-                    <div class="word">
-                        <p class="word-p1">iQOO U1x 全网通版 4GB...</p>
-                        <span>【①学生购机加赠（详情咨询客服）；②高等级会员加赠半年延</span>
-                        <p class="word-p2">￥899.00</p>
-                    </div>
-                </a>
-            </li>
-
-
-
-            <li>
-                <a href="#">
-                    <div class="img">
-                        <img src="img/webp2.png">
-                    </div>
-                    <div class="word">
-                        <p class="word-p1">iQOO U1x 全网通版 4GB...</p>
-                        <span>【①学生购机加赠（详情咨询客服）；②高等级会员加赠半年延</span>
-                        <p class="word-p2">￥899.00</p>
-                    </div>
-                </a>
-            </li>
-
-
-            <li>
-                <a href="#">
-                    <div class="img">
-                        <img src="img/webp3.png">
-                    </div>
-                    <div class="word">
-                        <p class="word-p1">iQOO 5 Pro 5G版 8...</p>
-                        <span>【①12期免息；②高等级会员赠半年延保；③赠90元组合配件券】 </span>
-                        <p class="word-p2">￥4998.00</p>
-                    </div>
-                </a>
-            </li>
-
-
-
-            <li>
-                <a href="#">
-                    <div class="img">
-                        <img src="img/webp4.png">
-                    </div>
-                    <div class="word">
-                        <p class="word-p1">iQOO 5 5G版 8...</p>
-                        <span>【①学生购机加赠（详情咨询客服）；②高等级会员加赠半年延</span>
-                        <p class="word-p2">￥3998.00</p>
-                    </div>
-                </a>
-            </li>
-
-        </ul>
-
-
-
-
-
-
-        <ul>
-            <li>
-                <a href="#">
-                    <div class="img">
-                        <img src="img/webp5.png">
-                    </div>
-                    <div class="word">
-                        <p class="word-p1">iQOO 5 5G版 12...</p>
-                        <span>【①学生购机加赠（详情咨询客服）；②高等级会员加赠半年延</span>
-                        <p class="word-p2">￥4599.00</p>
-                    </div>
-                </a>
-            </li>
-
-
-
-            <li>
-                <a href="#">
-                    <div class="img">
-                        <img src="img/webp6.png">
-                    </div>
-                    <div class="word">
-                        <p class="word-p1">iQOO U1x 全网通版 4GB...</p>
-                        <span>【①3期免息；②高等级会员赠半年延保；③赠90元组合配件券】</span>
-                        <p class="word-p2">￥1598.00</p>
-                    </div>
-                </a>
-            </li>
-
-
-            <li>
-                <a href="#">
-                    <div class="img">
-                        <img src="img/webp7.png">
-                    </div>
-                    <div class="word">
-                        <p class="word-p1">vivo S7e 5G版 8...</p>
-                        <span>【晒单赢新品手机】 6400万超清影像系统|3200万超清前置|重量约</span>
-                        <p class="word-p2">￥2398.00</p>
-                    </div>
-                </a>
-            </li>
-
-
-
-            <li>
-                <a href="#">
-                    <div class="img">
-                        <img src="img/webp8.png">
-                    </div>
-                    <div class="word">
-                        <p class="word-p1">vivo X50 Pro+ 5G版 8...</p>
-                        <span>【①享12期免息；②前200名购机赠网易耳机】 超清1亿模式|高通骁龙865|120Hz刷新</span>
-                        <p class="word-p2">￥5498.00</p>
-                    </div>
-                </a>
-            </li>
-
-        </ul>
+    <div class="wrap">
+        <div class="pic">
+            <img id="img" src="images/banner-1.jpg" alt="">
+        </div>
     </div>
+    <!-- 中间的部分 -->
+    <div class="main">
+        <!-- 找设计师 -->
+        <div class="designer">
+            <div class="designer-nav">
+                <span class="name">找设计师</span>
+                <ul>
+                    <li>
+                        <a href="#">设计师</a>
+                    </li>
+                    <li>
+                        <a href="#">设计机构</a>
+                    </li>
+                    <li>
+                        <a href="#">行业大咖</a>
+                    </li>
+                    <li>
+                        <a href="#">设计专访</a>
+                    </li>
+                </ul>
+                <span class="change">换一组</span>
+            </div>
+            <div class="designer-content">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="images/designer-1.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span>赵婷</span>
+                                <em>零玖零捌设计</em>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="word">
+                                <span>孔令芝</span>
+                                <em>KLZ室内设计事务所</em>
+                            </div>
+                            <div class="img">
+                                <img src="images/designer-2.jpg" alt="">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="images/designer-3.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span>徐颖卿</span>
+                                <em>柯睿空间设计</em>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="word">
+                                <span>Lisa</span>
+                                <em>泓为设计</em>
+                            </div>
+                            <div class="img">
+                                <img src="images/designer-4.jpg" alt="">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 案例推荐 -->
+        <div class="recommend">
+            <div class="recommend-nav">
+                <span class="name">案例推荐</span>
+                <ul>
+                    <li>
+                        <a href="#">装修图库</a>
+                    </li>
+                    <li>
+                        <a href="#">名家汇</a>
+                    </li>
+                    <li>
+                        <a href="#">案例解析</a>
+                    </li>
+                    <li>
+                        <a href="#">精选工装</a>
+                    </li>
+                </ul>
+                <span class="change">更多案例</span>
+            </div>
+            <div class="recommend-content">
+                <ul class="recommend-big">
+                    <li>
+                        <a href="#">
+                            <img src="upload/recommend-1.jpg" alt="">
+                            <div class="recommend-info">
+                                <div class="line-hide">
+                                    <div class="content">
+                                        <span class="title">力高大港·樾澜山生活体验馆</span>
+                                        <span class="name">Design by 布鲁盟室内设计</span>
+                                    </div>
+                                </div>
+                                <div class="recommend-bottom">
+                                    <span class="ico"></span>
+                                    <span class="num">533</span>
+                                    <span class="ico"></span>
+                                    <span class="num">5</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="upload/recommend-2.jpg" alt="">
+                            <div class="recommend-info">
+                                <div class="line-hide">
+                                    <div class="content">
+                                        <span class="title">融创 · 长乐雅颂</span>
+                                        <span class="name">Design by WJID维几设计</span>
+                                    </div>
+                                </div>
+                                <div class="recommend-bottom">
+                                    <span class="ico"></span>
+                                    <span class="num">1598</span>
+                                    <span class="ico"></span>
+                                    <span class="num">11</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
 
-    <a class="play" href="test1.html">点击隐藏</a>
+                <ul class="recommend-small">
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/recommend-3.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="recommend-name">新作：钱塘东方CO-Life美食图书馆</span>
+                                <div class="recommend-bottom">
+                                    <span class="designer-name">ONE-CU壹方设计</span>
+                                    <span class="ico"></span>
+                                    <span class="num">2582</span>
+                                    <span class="ico"></span>
+                                    <span class="num">20</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/recommend-4.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="recommend-name">办公空间设计：次时代体验空间</span>
+                                <div class="recommend-bottom">
+                                    <span class="designer-name">东木空间设计陈贤栋 </span>
+                                    <span class="ico"></span>
+                                    <span class="num">2199</span>
+                                    <span class="ico"></span>
+                                    <span class="num">12</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/recommend-5.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="recommend-name">Shuran 舒然养生空间</span>
+                                <div class="recommend-bottom">
+                                    <span class="designer-name">壹所设计</span>
+                                    <span class="ico"></span>
+                                    <span class="num">1499</span>
+                                    <span class="ico"></span>
+                                    <span class="num">15</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/recommend-6.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="recommend-name">东芝旗舰店｜末染设计</span>
+                                <div class="recommend-bottom">
+                                    <span class="designer-name">末染设计</span>
+                                    <span class="ico"></span>
+                                    <span class="num">549</span>
+                                    <span class="ico"></span>
+                                    <span class="num">0</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/recommend-7.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="recommend-name">一呼一吸之间·新陈代谢设计观的全方向实践</span>
+                                <div class="recommend-bottom">
+                                    <span class="designer-name">清石设计</span>
+                                    <span class="ico"></span>
+                                    <span class="num">1007</span>
+                                    <span class="ico"></span>
+                                    <span class="num">8</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/recommend-8.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="recommend-name">逸朗设计丨海上伊甸园</span>
+                                <div class="recommend-bottom">
+                                    <span class="designer-name">逸朗设计</span>
+                                    <span class="ico"></span>
+                                    <span class="num">618</span>
+                                    <span class="ico"></span>
+                                    <span class="num">1</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/recommend-9.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="recommend-name">全屋智能家居一呼百应，有多懂你？</span>
+                                <div class="recommend-bottom">
+                                    <span class="designer-name">南京上木设计</span>
+                                    <span class="ico"></span>
+                                    <span class="num">2843</span>
+                                    <span class="ico"></span>
+                                    <span class="num">23</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/recommend-10.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="recommend-name">凡心所向，素履以往 90㎡现代简约</span>
+                                <div class="recommend-bottom">
+                                    <span class="designer-name">麦丰国际设计</span>
+                                    <span class="ico"></span>
+                                    <span class="num">3469</span>
+                                    <span class="ico"></span>
+                                    <span class="num">24</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/recommend-11.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="recommend-name">尚舍生活设计|让活力绿点燃你的冬日热情！</span>
+                                <div class="recommend-bottom">
+                                    <span class="designer-name">尚舍生活</span>
+                                    <span class="ico"></span>
+                                    <span class="num">1820</span>
+                                    <span class="ico"></span>
+                                    <span class="num">18</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/recommend-12.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="recommend-name">126㎡现代轻奢风，让生活充满仪式感</span>
+                                <div class="recommend-bottom">
+                                    <span class="designer-name">鲁门设计</span>
+                                    <span class="ico"></span>
+                                    <span class="num">1668</span>
+                                    <span class="ico"></span>
+                                    <span class="num">16</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/recommend-13.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="recommend-name">耐人寻味的简约空间｜住宅空间</span>
+                                <div class="recommend-bottom">
+                                    <span class="designer-name">六品设计</span>
+                                    <span class="ico"></span>
+                                    <span class="num">1648</span>
+                                    <span class="ico"></span>
+                                    <span class="num">16</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/recommend-14.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="recommend-name">140㎡三居北欧风，餐厨一体文艺范儿十足</span>
+                                <div class="recommend-bottom">
+                                    <span class="designer-name">武汉鸿鹄装饰设计</span>
+                                    <span class="ico"></span>
+                                    <span class="num">1336</span>
+                                    <span class="ico"></span>
+                                    <span class="num">7</span>
+                                </div>
+                            </div>
+                            <div class="recommend-collect">
+                                <span class="ico"></span>
+                                <span class="word">收藏</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
 
+            </div>
+        </div>
+
+        <!-- 精品课程 -->
+        <div class=" course">
+            <div class="course-nav">
+                <span class="name">精品课程</span>
+                <ul>
+                    <li>
+                        <a href="#">公开课</a>
+                    </li>
+                    <li>
+                        <a href="#">一席之地</a>
+                    </li>
+                    <li>
+                        <a href="#">活动Live</a>
+                    </li>
+
+                </ul>
+                <span class="change">更多课程</span>
+            </div>
+            <div class="course-content">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/course-1.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="course-name">私宅软装搭配技巧</span>
+                                <div class="course-bottom">
+                                    <span class="name">牛庆立-锐格设计</span>
+                                    <em></em>
+                                    <span class="name">软装设计</span>
+                                    <em></em>
+                                    <span class="name">8323</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/course-2.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="course-name">2020设计本年度盛典总决赛暨颁奖典礼</span>
+                                <div class="course-bottom">
+                                    <span class="name">官方助手</span>
+                                    <em></em>
+                                    <span class="name">活动直播</span>
+                                    <em></em>
+                                    <span class="name">27067</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/course-3.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span class="course-name">现代设计视角下的国画形式构成分析</span>
+                                <div class="course-bottom">
+                                    <span class="name">明治空间设计</span>
+                                    <em></em>
+                                    <span class="name">设计思维</span>
+                                    <em></em>
+                                    <span class="name">6054</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 最新动态 -->
+        <div class="trends">
+            <div class="trends-nav">
+                <span class="name">最新动态</span>
+                <ul>
+                    <li>
+                        <a href="#">最新活动</a>
+                    </li>
+                    <li>
+                        <a href="#">设计前沿</a>
+                    </li>
+                </ul>
+                <span class="change">更多动态</span>
+            </div>
+            <div class="trends-content">
+                <ul class="top">
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/trends-1.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span>以质取信，以精致诚</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/trends-2.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span>好的设计一定要有文化的传递</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/trends-3.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <span>空间设计不是单纯的艺术，而是一种生活</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="bottom">
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/trends-4.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <em>设计本 2020-12-05 </em>
+                                <span>我要去米兰 | 全国十强冠军战点燃广州，这些精彩瞬间一定不能错过</span>
+                                <p>12月3日，“我要去米兰 2020中国设计力青年榜”颁奖典礼在广州设计周期间隆重举行！总...</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/trends-5.gif" alt="">
+                            </div>
+                            <div class="word">
+                                <em>中国家博会 2020-09-25 </em>
+                                <span>CIFF 上海虹桥 | 巢代·设计超有趣—设计主题展完美收官！</span>
+                                <p>9月10日，2020巢代「设计超有趣」设计主题展在上海虹桥国家会展中心完美收官，这场“好...</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="img">
+                                <img src="upload/trends-6.jpg" alt="">
+                            </div>
+                            <div class="word">
+                                <em>设计本 2020-07-29 </em>
+                                <span>土巴兔、设计本搭建“家”的舞台 5位大咖设界PK</span>
+                                <p>7月27日，第45届中国家博会（广州）在广州琶洲广交会展馆开幕。在27日至30日为期四天时...</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 合作品牌 -->
+        <div class="brand">
+            <div class="word">
+                <span>合作品牌</span>
+            </div>
+            <div class="img">
+                <ul class="push">
+                    <li>
+                        <a href="#">
+                            <img src="upload/brand-1.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="upload/brand-2.jpg" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="upload/brand-3.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="upload/brand-4.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="upload/brand-5.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="upload/brand-6.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="upload/brand-7.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="upload/brand-8.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="upload/brand-9.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="upload/brand-10.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="upload/brand-11.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="upload/brand-12.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- 尾部 -->
+    <div class="end">
+        <span><b>设计本</b></span>
+        <div class="content">
+            <div class="link">
+                <a href="#">关于我们</a>
+                <a href="#">联系我们</a>
+                <a href="#">意见建议</a>
+                <a href="#">帮助中心</a>
+                <a href="#">法律声明</a>
+                <a href="#">侵权投诉</a>
+                <a href="#">移动版</a>
+            </div>
+            <div class="line"></div>
+            <p class="relief">免责声明：本网站部分内容由用户自行上传，如权利人发现存在误传其作品情形，请及时与本站联系。</p>
+            <p class="bottom">
+                ©2020shejiben.com,All Rights Reserved.(
+                <a href="#">粤ICP证:B2-20120566号</a>
+                <a href="#">粤ICP备08125558号</a>
+            </p>
+        </div>
+    </div>
+    <div class="right-box">
+        <div class="box">
+            <a class="box-a1" href="#">
+                <em></em>
+                <label>申请设计</label>
+            </a>
+            <a class="box-a2" href="#">
+                <em></em>
+                <label>意见反馈</label>
+            </a>
+            <a class="box-a3" href="#">
+                <em></em>
+                <label>APP/微信</label>
+            </a>
+
+            <a class="box-a4" href="#">
+                <em></em>
+                <label>回到顶部</label>
+            </a>
+        </div>
+    </div>
+    <div class="underpart">
+        <div class="content">
+            <div class="top">
+                <div class="content">
+                    <span class="word-left">生活不再将就</span>
+                    <span class="gif"></span>
+                    <span class="word-right">个性化定制设计</span>
+                </div>
+            </div>
+            <span class="remove"></span>
+            <div class="main">
+                <div class="left">
+                    <div class="img"></div>
+                </div>
+                <div class="right">
+                    <form action="#">
+                        <p class="title">申请定制设计</p>
+                        <p class="content">已有<span>722.309</span>位业主申请定制设计</p>
+                        <div class="box">
+                            <input type="text" placeholder="您的称呼">
+                        </div>
+                        <div class="box">
+                            <input type="text" placeholder="手机号码">
+                        </div>
+                        <div class="box">
+                            <input type="text" placeholder="湖北 黄石">
+                            <i class="ico"></i>
+                        </div>
+                        <div class="box">
+                            <select name="Project Types" class="select">
+                            <option value>项目类型</option>
+                            <option value="">住宅空间</option>
+                            <option value="">餐饮空间</option>
+                            <option value="">办公空间</option>
+                            <option value="">酒店空间</option>
+                            <option value="">商业展示</option>
+                            <option value="">娱乐空间</option>
+                            <option value="">休闲场所</option>
+                            <option value="">文化空间</option>
+                            <option value="">医疗机构</option>
+                            <option value="">售楼中心</option>
+                            <option value="">金融机构</option>
+                            <option value="">运动场所</option>
+                            <option value="">教育机构</option>
+                            <option value="">其他</option>
+                        </select>
+                        </div>
+                        <input type="button" value="立即提交">
+                        <div class="text">*为了您的权益，您的隐私将被严格保密</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- 导航栏 -->
+<script type="text/javascript">
+    $(function() {
+        $(".nav2").hide();
+        $(window).scroll(function() {
+            if ($(document).scrollTop() >= 500) {
+                $(".nav2").addClass("fixnav").slideDown();
+            } else {
+                $(".nav2").hide();
+            }
+        })
+    })
+</script>
+
+<!-- 轮播图 -->
+<script>
+    var pic = document.querySelector('img');
+    var imgs = ['images/banner-1.jpg', 'images/banner-2.jpg', 'images/banner-3.jpg'];
+    var num = 0;
+    setInterval(function() {
+        num++;
+        if (num >= imgs.length) {
+            num = 0;
+        }
+        pic.src = imgs[num];
+    }, 3000)
+</script>
+
+<!-- 下部 -->
+<script>
+    $(".underpart .top").click(function() {
+        $(".underpart .remove").css("display", "block");
+        var h = $(".underpart").height();
+        if (h == 85) {
+            $(".underpart").css("height", "636px");
+            $(".underpart .main").css("display", "block");
+        } else {
+            $(".underpart").css("height", "85px");
+            $(".underpart .remove").css("display", "none");
+        }
+
+    });
+
+    $(".underpart .remove").click(function() {
+        var h = $(".underpart").height();
+        if (h == 85) {
+            $(".underpart").css("height", "636px");
+            $(".underpart .main").css("display", "block");
+        } else {
+            $(".underpart").css("height", "85px");
+            $(".underpart .remove").css("display", "none");
+        }
+
+    });
+</script>
 
 </html>
